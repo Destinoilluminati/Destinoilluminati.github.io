@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aprender Alemán en una Clínica Veterinaria</title>
-    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -24,122 +24,105 @@
         <article>
             <h3>Saludos y Presentaciones</h3>
             <p>En una clínica veterinaria, es importante saber cómo saludar y presentarse adecuadamente. Aquí aprenderás las frases básicas para interactuar con los clientes.</p>
-            <table>
+            <table id="saludos-table">
                 <thead>
                     <tr>
                         <th>Español</th>
                         <th>Alemán</th>
                         <th>Pronunciación</th>
+                        <th>Respuesta</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
                         <td>Hola</td>
                         <td>Hallo</td>
-                        <td>hah-lo</td>
+                        <td><audio src="audio/hallo.mp3" controls></audio></td>
+                        <td><input type="text" data-correct="Hallo"></td>
                     </tr>
                     <tr>
                         <td>Buenos días</td>
                         <td>Guten Morgen</td>
-                        <td>goo-ten mor-gen</td>
+                        <td><audio src="audio/guten_morgen.mp3" controls></audio></td>
+                        <td><input type="text" data-correct="Guten Morgen"></td>
                     </tr>
                     <tr>
                         <td>Buenas tardes</td>
                         <td>Guten Tag</td>
-                        <td>goo-ten tahk</td>
+                        <td><audio src="audio/guten_tag.mp3" controls></audio></td>
+                        <td><input type="text" data-correct="Guten Tag"></td>
                     </tr>
                     <tr>
                         <td>Buenas noches</td>
                         <td>Guten Abend</td>
-                        <td>goo-ten ah-bent</td>
+                        <td><audio src="audio/guten_abend.mp3" controls></audio></td>
+                        <td><input type="text" data-correct="Guten Abend"></td>
                     </tr>
                     <tr>
                         <td>Adiós</td>
                         <td>Auf Wiedersehen</td>
-                        <td>owf vee-der-zay-en</td>
+                        <td><audio src="audio/auf_wiedersehen.mp3" controls></audio></td>
+                        <td><input type="text" data-correct="Auf Wiedersehen"></td>
                     </tr>
                 </tbody>
             </table>
             <div class="exercise">
                 <h4>Ejercicio de Memorización</h4>
-                <p>Empareja las frases en español con su equivalente en alemán.</p>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Español</th>
-                            <th>Alemán</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>1. Hola</td>
-                            <td>a. Guten Tag</td>
-                        </tr>
-                        <tr>
-                            <td>2. Adiós</td>
-                            <td>b. Guten Morgen</td>
-                        </tr>
-                        <tr>
-                            <td>3. Buenas tardes</td>
-                            <td>c. Hallo</td>
-                        </tr>
-                        <tr>
-                            <td>4. Buenos días</td>
-                            <td>d. Auf Wiedersehen</td>
-                        </tr>
-                        <tr>
-                            <td>5. Buenas noches</td>
-                            <td>e. Guten Abend</td>
-                        </tr>
-                    </tbody>
-                </table>
-                <p>Respuestas: 1 - c, 2 - d, 3 - a, 4 - b, 5 - e</p>
+                <p>Comprueba tus respuestas:</p>
+                <button onclick="checkAnswers('saludos-table')">Verificar Respuestas</button>
+                <p id="saludos-result"></p>
             </div>
         </article>
         <article>
             <h3>Vocabulario Básico</h3>
             <p>Aprender el vocabulario básico te permitirá entender y comunicarte mejor en una clínica veterinaria. Aquí tienes una lista de palabras esenciales.</p>
-            <table>
+            <table id="vocabulario-table">
                 <thead>
                     <tr>
                         <th>Español</th>
                         <th>Alemán</th>
                         <th>Pronunciación</th>
+                        <th>Respuesta</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
                         <td>Perro</td>
                         <td>Hund</td>
-                        <td>hoont</td>
+                        <td><audio src="audio/hund.mp3" controls></audio></td>
+                        <td><input type="text" data-correct="Hund"></td>
                     </tr>
                     <tr>
                         <td>Gato</td>
                         <td>Katze</td>
-                        <td>kat-ze</td>
+                        <td><audio src="audio/katze.mp3" controls></audio></td>
+                        <td><input type="text" data-correct="Katze"></td>
                     </tr>
                     <tr>
                         <td>Veterinario</td>
                         <td>Tierarzt</td>
-                        <td>teer-artst</td>
+                        <td><audio src="audio/tierarzt.mp3" controls></audio></td>
+                        <td><input type="text" data-correct="Tierarzt"></td>
                     </tr>
                     <tr>
                         <td>Enfermo</td>
                         <td>Krank</td>
-                        <td>krank</td>
+                        <td><audio src="audio/krank.mp3" controls></audio></td>
+                        <td><input type="text" data-correct="Krank"></td>
                     </tr>
                     <tr>
                         <td>Saludable</td>
                         <td>Gesund</td>
-                        <td>geh-zoont</td>
+                        <td><audio src="audio/gesund.mp3" controls></audio></td>
+                        <td><input type="text" data-correct="Gesund"></td>
                     </tr>
                 </tbody>
             </table>
             <div class="exercise">
                 <h4>Ejercicio de Memorización</h4>
-                <p>Completa la siguiente oración con la palabra correcta en alemán:</p>
-                <p>1. El ____ (perro) está ____ (enfermo).</p>
-                <p>Respuestas: 1. El Hund está krank.</p>
+                <p>Comprueba tus respuestas:</p>
+                <button onclick="checkAnswers('vocabulario-table')">Verificar Respuestas</button>
+                <p id="vocabulario-result"></p>
             </div>
         </article>
     </section>
@@ -148,90 +131,50 @@
         <article>
             <h3>Conversaciones Cotidianas</h3>
             <p>En esta sección, aprenderás a mantener conversaciones cotidianas con los clientes de la clínica veterinaria.</p>
-            <table>
+            <table id="conversaciones-table">
                 <thead>
                     <tr>
                         <th>Español</th>
                         <th>Alemán</th>
                         <th>Pronunciación</th>
+                        <th>Respuesta</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
                         <td>¿Cómo está su mascota?</td>
                         <td>Wie geht es Ihrem Haustier?</td>
-                        <td>vee geht es eer-em hows-teer</td>
+                        <td><audio src="audio/wie_geht_es.mp3" controls></audio></td>
+                        <td><input type="text" data-correct="Wie geht es Ihrem Haustier?"></td>
                     </tr>
                     <tr>
                         <td>Necesitamos hacer un examen</td>
                         <td>Wir müssen eine Untersuchung machen</td>
-                        <td>veer müss-en ai-ne oon-ter-soo-chung ma-hen</td>
+                        <td><audio src="audio/untersuchung_machen.mp3" controls></audio></td>
+                        <td><input type="text" data-correct="Wir müssen eine Untersuchung machen"></td>
                     </tr>
                     <tr>
                         <td>Su mascota necesita una vacuna</td>
                         <td>Ihr Haustier braucht eine Impfung</td>
-                        <td>eer hows-teer brow-kht ai-ne imp-foong</td>
+                        <td><audio src="audio/impfung.mp3" controls></audio></td>
+                        <td><input type="text" data-correct="Ihr Haustier braucht eine Impfung"></td>
                     </tr>
                     <tr>
                         <td>¿Tiene alguna pregunta?</td>
                         <td>Haben Sie irgendwelche Fragen?</td>
-                        <td>hah-ben zee eer-gend-wel-che frah-gen</td>
+                        <td><audio src="audio/fragen.mp3" controls></audio></td>
+                        <td><input type="text" data-correct="Haben Sie irgendwelche Fragen?"></td>
                     </tr>
                     <tr>
                         <td>La consulta ha terminado</td>
                         <td>Die Sprechstunde ist beendet</td>
-                        <td>dee shprekh-shtoon-de ist be-end-et</td>
+                        <td><audio src="audio/sprechstunde.mp3" controls></audio></td>
+                        <td><input type="text" data-correct="Die Sprechstunde ist beendet"></td>
                     </tr>
                 </tbody>
             </table>
             <div class="exercise">
                 <h4>Ejercicio de Memorización</h4>
-                <p>Forma oraciones correctas usando las palabras proporcionadas:</p>
-                <p>1. Haustier / eine / Impfung / Ihr / braucht</p>
-                <p>Respuestas: 1. Ihr Haustier braucht eine Impfung.</p>
-            </div>
-        </article>
-        <article>
-            <h3>Vocabulario Médico</h3>
-            <p>El vocabulario médico es esencial para describir síntomas, diagnósticos y tratamientos en una clínica veterinaria.</p>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Español</th>
-                        <th>Alemán</th>
-                        <th>Pronunciación</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Vacuna</td>
-                        <td>Impfung</td>
-                        <td>imp-foong</td>
-                    </tr>
-                    <tr>
-                        <td>Infección</td>
-                        <td>Infektion</td>
-                        <td>inf-ek-tzee-on</td>
-                    </tr>
-                    <tr>
-                        <td>Tratamiento</td>
-                        <td>Behandlung</td>
-                        <td>beh-hand-loong</td>
-                    </tr>
-                    <tr>
-                        <td>Diagnóstico</td>
-                        <td>Diagnose</td>
-                        <td>dee-ag-noh-ze</td>
-                    </tr>
-                    <tr>
-                        <td>Medicina</td>
-                        <td>Medizin</td>
-                        <td>meh-dee-tseen</td>
-                    </tr>
-                </tbody>
-            </table>
-        </article>
-    </section>
-    <footer>
-        <p>© 2024 Aprender Alemán en una Clínica Veterinaria</p>
-    </
+                <p>Comprueba tus respuestas:</p>
+                <button onclick="checkAnswers('conversaciones-table')">Verificar Respuestas</button>
+                <p id="conversaciones
