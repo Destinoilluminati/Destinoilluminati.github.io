@@ -6,6 +6,8 @@
     <title>Aprender Alemán en una Clínica Veterinaria</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="scripts.js" defer></script>
 </head>
 <body>
     <header>
@@ -15,8 +17,6 @@
     <nav>
         <ul>
             <li><a href="#nivel-basico">Nivel Básico 🐾</a></li>
-            <li><a href="#nivel-intermedio">Nivel Intermedio 🐾</a></li>
-            <li><a href="#nivel-avanzado">Nivel Avanzado 🐾</a></li>
         </ul>
     </nav>
     <section id="nivel-basico">
@@ -29,46 +29,52 @@
                     <tr>
                         <th>Español</th>
                         <th>Alemán</th>
-                        <th>Pronunciación</th>
+                        <th>Uso</th>
                         <th>Respuesta</th>
+                        <th>Audio</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
                         <td>Hola</td>
                         <td>Hallo</td>
-                        <td><audio src="audio/hallo.mp3" controls></audio></td>
+                        <td>Al saludar a los clientes.</td>
                         <td><input type="text" data-correct="Hallo"></td>
+                        <td><button class="audio-btn" data-audio="audio/hallo.mp3">🔊</button></td>
                     </tr>
                     <tr>
                         <td>Buenos días</td>
                         <td>Guten Morgen</td>
-                        <td><audio src="audio/guten_morgen.mp3" controls></audio></td>
+                        <td>Al iniciar el día con los clientes.</td>
                         <td><input type="text" data-correct="Guten Morgen"></td>
+                        <td><button class="audio-btn" data-audio="audio/guten_morgen.mp3">🔊</button></td>
                     </tr>
                     <tr>
                         <td>Buenas tardes</td>
                         <td>Guten Tag</td>
-                        <td><audio src="audio/guten_tag.mp3" controls></audio></td>
+                        <td>Saludo general durante el día.</td>
                         <td><input type="text" data-correct="Guten Tag"></td>
+                        <td><button class="audio-btn" data-audio="audio/guten_tag.mp3">🔊</button></td>
                     </tr>
                     <tr>
                         <td>Buenas noches</td>
                         <td>Guten Abend</td>
-                        <td><audio src="audio/guten_abend.mp3" controls></audio></td>
+                        <td>Saludo al final del día.</td>
                         <td><input type="text" data-correct="Guten Abend"></td>
+                        <td><button class="audio-btn" data-audio="audio/guten_abend.mp3">🔊</button></td>
                     </tr>
                     <tr>
                         <td>Adiós</td>
                         <td>Auf Wiedersehen</td>
-                        <td><audio src="audio/auf_wiedersehen.mp3" controls></audio></td>
+                        <td>Despedida al finalizar una consulta.</td>
                         <td><input type="text" data-correct="Auf Wiedersehen"></td>
+                        <td><button class="audio-btn" data-audio="audio/auf_wiedersehen.mp3">🔊</button></td>
                     </tr>
                 </tbody>
             </table>
             <div class="exercise">
                 <h4>Ejercicio de Memorización</h4>
-                <p>Comprueba tus respuestas:</p>
+                <p>Completa las frases en alemán:</p>
                 <button onclick="checkAnswers('saludos-table')">Verificar Respuestas</button>
                 <p id="saludos-result"></p>
             </div>
@@ -81,100 +87,84 @@
                     <tr>
                         <th>Español</th>
                         <th>Alemán</th>
-                        <th>Pronunciación</th>
+                        <th>Uso</th>
                         <th>Respuesta</th>
+                        <th>Audio</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
                         <td>Perro</td>
                         <td>Hund</td>
-                        <td><audio src="audio/hund.mp3" controls></audio></td>
+                        <td>Para referirse a los animales caninos.</td>
                         <td><input type="text" data-correct="Hund"></td>
+                        <td><button class="audio-btn" data-audio="audio/hund.mp3">🔊</button></td>
                     </tr>
                     <tr>
                         <td>Gato</td>
                         <td>Katze</td>
-                        <td><audio src="audio/katze.mp3" controls></audio></td>
+                        <td>Para referirse a los animales felinos.</td>
                         <td><input type="text" data-correct="Katze"></td>
+                        <td><button class="audio-btn" data-audio="audio/katze.mp3">🔊</button></td>
                     </tr>
                     <tr>
                         <td>Veterinario</td>
                         <td>Tierarzt</td>
-                        <td><audio src="audio/tierarzt.mp3" controls></audio></td>
+                        <td>Persona que cuida y trata a los animales.</td>
                         <td><input type="text" data-correct="Tierarzt"></td>
+                        <td><button class="audio-btn" data-audio="audio/tierarzt.mp3">🔊</button></td>
                     </tr>
                     <tr>
                         <td>Enfermo</td>
                         <td>Krank</td>
-                        <td><audio src="audio/krank.mp3" controls></audio></td>
+                        <td>Estado de un animal cuando no está bien.</td>
                         <td><input type="text" data-correct="Krank"></td>
+                        <td><button class="audio-btn" data-audio="audio/krank.mp3">🔊</button></td>
                     </tr>
                     <tr>
                         <td>Saludable</td>
                         <td>Gesund</td>
-                        <td><audio src="audio/gesund.mp3" controls></audio></td>
+                        <td>Estado deseable de un animal.</td>
                         <td><input type="text" data-correct="Gesund"></td>
+                        <td><button class="audio-btn" data-audio="audio/gesund.mp3">🔊</button></td>
+                    </tr>
+                    <tr>
+                        <td>Medicina</td>
+                        <td>Medizin</td>
+                        <td>Productos utilizados para tratar enfermedades.</td>
+                        <td><input type="text" data-correct="Medizin"></td>
+                        <td><button class="audio-btn" data-audio="audio/medizin.mp3">🔊</button></td>
+                    </tr>
+                    <tr>
+                        <td>Pastillas</td>
+                        <td>Tabletten</td>
+                        <td>Forma común de medicamento en tabletas.</td>
+                        <td><input type="text" data-correct="Tabletten"></td>
+                        <td><button class="audio-btn" data-audio="audio/tabletten.mp3">🔊</button></td>
+                    </tr>
+                    <tr>
+                        <td>Dosis</td>
+                        <td>Dosis</td>
+                        <td>Cantidad específica de medicamento.</td>
+                        <td><input type="text" data-correct="Dosis"></td>
+                        <td><button class="audio-btn" data-audio="audio/dosis.mp3">🔊</button></td>
+                    </tr>
+                    <tr>
+                        <td>Fechas</td>
+                        <td>Datum</td>
+                        <td>Días específicos o periodos de tiempo.</td>
+                        <td><input type="text" data-correct="Datum"></td>
+                        <td><button class="audio-btn" data-audio="audio/datum.mp3">🔊</button></td>
                     </tr>
                 </tbody>
             </table>
             <div class="exercise">
                 <h4>Ejercicio de Memorización</h4>
-                <p>Comprueba tus respuestas:</p>
+                <p>Completa las palabras en alemán:</p>
                 <button onclick="checkAnswers('vocabulario-table')">Verificar Respuestas</button>
                 <p id="vocabulario-result"></p>
             </div>
         </article>
     </section>
-    <section id="nivel-intermedio">
-        <h2>Nivel Intermedio 🐾</h2>
-        <article>
-            <h3>Conversaciones Cotidianas</h3>
-            <p>En esta sección, aprenderás a mantener conversaciones cotidianas con los clientes de la clínica veterinaria.</p>
-            <table id="conversaciones-table">
-                <thead>
-                    <tr>
-                        <th>Español</th>
-                        <th>Alemán</th>
-                        <th>Pronunciación</th>
-                        <th>Respuesta</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>¿Cómo está su mascota?</td>
-                        <td>Wie geht es Ihrem Haustier?</td>
-                        <td><audio src="audio/wie_geht_es.mp3" controls></audio></td>
-                        <td><input type="text" data-correct="Wie geht es Ihrem Haustier?"></td>
-                    </tr>
-                    <tr>
-                        <td>Necesitamos hacer un examen</td>
-                        <td>Wir müssen eine Untersuchung machen</td>
-                        <td><audio src="audio/untersuchung_machen.mp3" controls></audio></td>
-                        <td><input type="text" data-correct="Wir müssen eine Untersuchung machen"></td>
-                    </tr>
-                    <tr>
-                        <td>Su mascota necesita una vacuna</td>
-                        <td>Ihr Haustier braucht eine Impfung</td>
-                        <td><audio src="audio/impfung.mp3" controls></audio></td>
-                        <td><input type="text" data-correct="Ihr Haustier braucht eine Impfung"></td>
-                    </tr>
-                    <tr>
-                        <td>¿Tiene alguna pregunta?</td>
-                        <td>Haben Sie irgendwelche Fragen?</td>
-                        <td><audio src="audio/fragen.mp3" controls></audio></td>
-                        <td><input type="text" data-correct="Haben Sie irgendwelche Fragen?"></td>
-                    </tr>
-                    <tr>
-                        <td>La consulta ha terminado</td>
-                        <td>Die Sprechstunde ist beendet</td>
-                        <td><audio src="audio/sprechstunde.mp3" controls></audio></td>
-                        <td><input type="text" data-correct="Die Sprechstunde ist beendet"></td>
-                    </tr>
-                </tbody>
-            </table>
-            <div class="exercise">
-                <h4>Ejercicio de Memorización</h4>
-                <p>Comprueba tus respuestas:</p>
-                <button onclick="checkAnswers('conversaciones-table')">Verificar Respuestas</button>
-                <p id="conversaciones
+</body>
+</html>
