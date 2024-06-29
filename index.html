@@ -8,6 +8,121 @@
     <link rel="stylesheet" href="styles.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="scripts.js" defer></script>
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.6;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1em 0;
+        }
+        nav {
+            background-color: #666;
+            padding: 0.5em 0;
+            text-align: center;
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        nav ul li {
+            display: inline;
+            margin: 0 10px;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+        main {
+            padding: 20px;
+        }
+        section {
+            margin-bottom: 40px;
+        }
+        h2 {
+            color: #333;
+        }
+        article {
+            background-color: white;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        table {
+            width: 100%;
+            margin-top: 10px;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        .exercise {
+            margin-top: 20px;
+        }
+        .fill-in {
+            margin-top: 20px;
+        }
+        select, button, input[type="text"] {
+            margin-top: 10px;
+            padding: 8px;
+            font-size: 1em;
+        }
+        button {
+            cursor: pointer;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin-top: 10px;
+            transition-duration: 0.4s;
+            box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+        }
+        button:hover {
+            background-color: #3e8e41;
+            color: white;
+        }
+        .audio-btn {
+            cursor: pointer;
+            font-size: 1.2em;
+            background-color: #337ab7;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            padding: 5px 10px;
+            margin-left: 5px;
+            transition: background-color 0.3s;
+        }
+        .audio-btn:hover {
+            background-color: #286090;
+        }
+        .correct-answer {
+            color: green;
+            font-weight: bold;
+        }
+        .wrong-answer {
+            color: red;
+            font-weight: bold;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -17,154 +132,92 @@
     <nav>
         <ul>
             <li><a href="#nivel-basico">Nivel Básico 🐾</a></li>
+            <li><a href="#nivel-avanzado">Nivel Avanzado 🌟</a></li>
         </ul>
     </nav>
-    <section id="nivel-basico">
-        <h2>Nivel Básico 🐾</h2>
-        <article>
-            <h3>Saludos y Presentaciones</h3>
-            <p>En una clínica veterinaria, es importante saber cómo saludar y presentarse adecuadamente. Aquí aprenderás las frases básicas para interactuar con los clientes.</p>
-            <table id="saludos-table">
-                <thead>
-                    <tr>
-                        <th>Español</th>
-                        <th>Alemán</th>
-                        <th>Uso</th>
-                        <th>Respuesta</th>
-                        <th>Audio</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Hola</td>
-                        <td>Hallo</td>
-                        <td>Al saludar a los clientes.</td>
-                        <td><input type="text" data-correct="Hallo"></td>
-                        <td><button class="audio-btn" data-audio="audio/hallo.mp3">🔊</button></td>
-                    </tr>
-                    <tr>
-                        <td>Buenos días</td>
-                        <td>Guten Morgen</td>
-                        <td>Al iniciar el día con los clientes.</td>
-                        <td><input type="text" data-correct="Guten Morgen"></td>
-                        <td><button class="audio-btn" data-audio="audio/guten_morgen.mp3">🔊</button></td>
-                    </tr>
-                    <tr>
-                        <td>Buenas tardes</td>
-                        <td>Guten Tag</td>
-                        <td>Saludo general durante el día.</td>
-                        <td><input type="text" data-correct="Guten Tag"></td>
-                        <td><button class="audio-btn" data-audio="audio/guten_tag.mp3">🔊</button></td>
-                    </tr>
-                    <tr>
-                        <td>Buenas noches</td>
-                        <td>Guten Abend</td>
-                        <td>Saludo al final del día.</td>
-                        <td><input type="text" data-correct="Guten Abend"></td>
-                        <td><button class="audio-btn" data-audio="audio/guten_abend.mp3">🔊</button></td>
-                    </tr>
-                    <tr>
-                        <td>Adiós</td>
-                        <td>Auf Wiedersehen</td>
-                        <td>Despedida al finalizar una consulta.</td>
-                        <td><input type="text" data-correct="Auf Wiedersehen"></td>
-                        <td><button class="audio-btn" data-audio="audio/auf_wiedersehen.mp3">🔊</button></td>
-                    </tr>
-                </tbody>
-            </table>
-            <div class="exercise">
-                <h4>Ejercicio de Memorización</h4>
-                <p>Completa las frases en alemán:</p>
-                <button onclick="checkAnswers('saludos-table')">Verificar Respuestas</button>
-                <p id="saludos-result"></p>
-            </div>
-        </article>
-        <article>
-            <h3>Vocabulario Básico</h3>
-            <p>Aprender el vocabulario básico te permitirá entender y comunicarte mejor en una clínica veterinaria. Aquí tienes una lista de palabras esenciales.</p>
-            <table id="vocabulario-table">
-                <thead>
-                    <tr>
-                        <th>Español</th>
-                        <th>Alemán</th>
-                        <th>Uso</th>
-                        <th>Respuesta</th>
-                        <th>Audio</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Perro</td>
-                        <td>Hund</td>
-                        <td>Para referirse a los animales caninos.</td>
-                        <td><input type="text" data-correct="Hund"></td>
-                        <td><button class="audio-btn" data-audio="audio/hund.mp3">🔊</button></td>
-                    </tr>
-                    <tr>
-                        <td>Gato</td>
-                        <td>Katze</td>
-                        <td>Para referirse a los animales felinos.</td>
-                        <td><input type="text" data-correct="Katze"></td>
-                        <td><button class="audio-btn" data-audio="audio/katze.mp3">🔊</button></td>
-                    </tr>
-                    <tr>
-                        <td>Veterinario</td>
-                        <td>Tierarzt</td>
-                        <td>Persona que cuida y trata a los animales.</td>
-                        <td><input type="text" data-correct="Tierarzt"></td>
-                        <td><button class="audio-btn" data-audio="audio/tierarzt.mp3">🔊</button></td>
-                    </tr>
-                    <tr>
-                        <td>Enfermo</td>
-                        <td>Krank</td>
-                        <td>Estado de un animal cuando no está bien.</td>
-                        <td><input type="text" data-correct="Krank"></td>
-                        <td><button class="audio-btn" data-audio="audio/krank.mp3">🔊</button></td>
-                    </tr>
-                    <tr>
-                        <td>Saludable</td>
-                        <td>Gesund</td>
-                        <td>Estado deseable de un animal.</td>
-                        <td><input type="text" data-correct="Gesund"></td>
-                        <td><button class="audio-btn" data-audio="audio/gesund.mp3">🔊</button></td>
-                    </tr>
-                    <tr>
-                        <td>Medicina</td>
-                        <td>Medizin</td>
-                        <td>Productos utilizados para tratar enfermedades.</td>
-                        <td><input type="text" data-correct="Medizin"></td>
-                        <td><button class="audio-btn" data-audio="audio/medizin.mp3">🔊</button></td>
-                    </tr>
-                    <tr>
-                        <td>Pastillas</td>
-                        <td>Tabletten</td>
-                        <td>Forma común de medicamento en tabletas.</td>
-                        <td><input type="text" data-correct="Tabletten"></td>
-                        <td><button class="audio-btn" data-audio="audio/tabletten.mp3">🔊</button></td>
-                    </tr>
-                    <tr>
-                        <td>Dosis</td>
-                        <td>Dosis</td>
-                        <td>Cantidad específica de medicamento.</td>
-                        <td><input type="text" data-correct="Dosis"></td>
-                        <td><button class="audio-btn" data-audio="audio/dosis.mp3">🔊</button></td>
-                    </tr>
-                    <tr>
-                        <td>Fechas</td>
-                        <td>Datum</td>
-                        <td>Días específicos o periodos de tiempo.</td>
-                        <td><input type="text" data-correct="Datum"></td>
-                        <td><button class="audio-btn" data-audio="audio/datum.mp3">🔊</button></td>
-                    </tr>
-                </tbody>
-            </table>
-            <div class="exercise">
-                <h4>Ejercicio de Memorización</h4>
-                <p>Completa las palabras en alemán:</p>
-                <button onclick="checkAnswers('vocabulario-table')">Verificar Respuestas</button>
-                <p id="vocabulario-result"></p>
-            </div>
-        </article>
-    </section>
-</body>
-</html>
+    <main>
+        <section id="nivel-basico">
+            <h2>Nivel Básico 🐾</h2>
+            <article>
+                <h3>Saludos y Presentaciones</h3>
+                <p>En una clínica veterinaria, es importante saber cómo saludar y presentarse adecuadamente. Aquí aprenderás las frases básicas para interactuar con los clientes.</p>
+                <table id="saludos-table">
+                    <thead>
+                        <tr>
+                            <th>Español</th>
+                            <th>Alemán</th>
+                            <th>Uso</th>
+                            <th>Respuesta</th>
+                            <th>Audio</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Hola</td>
+                            <td>Hallo</td>
+                            <td>Al saludar a los clientes.</td>
+                            <td><input type="text" data-correct="Hallo"></td>
+                            <td><button class="audio-btn" data-audio="audio/hallo.mp3">🔊</button></td>
+                        </tr>
+                        <tr>
+                            <td>Buenos días</td>
+                            <td>Guten Morgen</td>
+                            <td>Al iniciar el día con los clientes.</td>
+                            <td><input type="text" data-correct="Guten Morgen"></td>
+                            <td><button class="audio-btn" data-audio="audio/guten_morgen.mp3">🔊</button></td>
+                        </tr>
+                        <tr>
+                            <td>Buenas tardes</td>
+                            <td>Guten Tag</td>
+                            <td>Saludo general durante el día.</td>
+                            <td><input type="text" data-correct="Guten Tag"></td>
+                            <td><button class="audio-btn" data-audio="audio/guten_tag.mp3">🔊</button></td>
+                        </tr>
+                        <tr>
+                            <td>Buenas noches</td>
+                            <td>Guten Abend</td>
+                            <td>Saludo al final del día.</td>
+                            <td><input type="text" data-correct="Guten Abend"></td>
+                            <td><button class="audio-btn" data-audio="audio/guten_abend.mp3">🔊</button></td>
+                        </tr>
+                        <tr>
+                            <td>Adiós</td>
+                            <td>Auf Wiedersehen</td>
+                            <td>Despedida al finalizar una consulta.</td>
+                            <td><input type="text" data-correct="Auf Wiedersehen"></td>
+                            <td><button class="audio-btn" data-audio="audio/auf_wiedersehen.mp3">🔊</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="exercise">
+                    <h4>Ejercicio de Memorización</h4>
+                    <p>Completa las frases en alemán:</p>
+                    <button onclick="checkAnswers('saludos-table')">Verificar Respuestas</button>
+                    <p id="saludos-result"></p>
+                </div>
+                <div class="fill-in">
+                    <h4>Ejercicio de Rellenado</h4>
+                    <p>Completa la siguiente frase:</p>
+                    <p>"El veterinario saluda a los clientes diciendo _____."</p>
+                    <select id="ejercicio1">
+                        <option value="">Selecciona una respuesta</option>
+                        <option value="Hallo">Hallo</option>
+                        <option value="Guten Morgen">Guten Morgen</option>
+                        <option value="Guten Tag">Guten Tag</option>
+                        <option value="Guten Abend">Guten Abend</option>
+                        <option value="Auf Wiedersehen">Auf Wiedersehen</option>
+                    </select>
+                    <button onclick="checkFillIn('ejercicio1', 'Hallo')">Verificar Respuesta</button>
+                    <p id="ejercicio1-result"></p>
+                </div>
+            </article>
+            <article>
+                <h3>Vocabulario Básico</h3>
+                <p>Aprender el vocabulario básico te permitirá entender y comunicarte mejor en una clínica veterinaria. Aquí tienes una lista de palabras esenciales.</p>
+                <table id="vocabulario-table">
+                    <thead>
+                        <tr>
+                            <th>Español</th>
+                            <th>Alemán</th>
+                            <th>Uso</th>
+                            <th
